@@ -1,2 +1,2 @@
-# part-virtual-scrool
+# part-virtual-scroll
 局部滚动
