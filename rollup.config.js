@@ -1,23 +1,22 @@
-import json from 'rollup-plugin-json';
+import resolve from '@rollup/plugin-node-resolve'; //查找外部模块
+import commonjs from '@rollup/plugin-commonjs'; //转为es
+import json from '@rollup/plugin-json';
+import babel from '@rollup/plugin-babel';
 import postcss from 'rollup-plugin-postcss';
-import simplevars from 'postcss-simple-vars';
+
 
 export default {
   input: 'src/index.js',
   output: {
-    file: 'dist/js/bundle.js',
-    format: 'es',
+    file: 'dist/js/part-scroll.js',
+    name: 'PartScroll',
+    format: 'umd',
   },
-  plugins: [
+  plugins: [ 
+    resolve({browser: true}),
     json(),
-    postcss({
-      plugins: [
-        simplevars(),
-      ],
-      extensions: ['.css'],
-    }),
+    commonjs(),
+    postcss(),
+    babel({ babelHelpers: 'bundled' })
   ],
-  watch: {
-    include: 'src/**',
-  },
 };

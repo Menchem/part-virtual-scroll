@@ -1,10 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ES6</title>
+  <title>scroll</title>
+  <style>
+    *{
+    padding: 0;
+    margin: 0;
+}
+#scroll{
+    width: 400px;
+    height: 500px;
+    background-color: aquamarine;
+    position: relative;
+    overflow: auto;
+}
+#scroll .list .list-item{
+    border-bottom: 1px solid #efefef;  
+}
+  </style>
 </head>
 <body>
-  <script type="module" src="js/bundle.js"></script>
+
+  <div id="scroll">
+    <div class="list"></div>
+  </div>
+
+  <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="js/part-scroll.js"></script>
+  <script type="module" src="js/test.js"></script>
   <!-- <script src="js/bundle-iife.js"></script> -->
 
 

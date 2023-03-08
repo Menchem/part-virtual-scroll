@@ -10,7 +10,7 @@ export default {
   input: 'src/index.js',
   output: {
     file: 'dist/js/bundle-release.js',
-    name: 'umd',
+    name: 'scroll',
     format: 'umd',
   },
   plugins: [

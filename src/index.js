@@ -1,8 +1,5 @@
-import { version } from '../package.json';
-import '../css/main.css';
+import scroll from './scroll';
 
+scroll.version = '1.0.0';
 
-
-console.log("version", version);
-document.body.innerText = '测试页面';
-
+export default scroll;
