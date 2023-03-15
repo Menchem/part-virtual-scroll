@@ -9,6 +9,7 @@
     "dev:serve": "http-server ./dist -p 8080 -s -c-1 -o",
     "dev:reload": "livereload  ./dist",
     "dev:build": "rollup -c rollup.config.js --watch",
+    "umd": "rollup -c rollup.config.umd.js",
     "eslint": "eslint src/",
     "test": "jest --config=./jest.config.js",
     "json": "json-server ./mock/data.cjs --watch"

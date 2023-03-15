@@ -1,6 +1,6 @@
 //import "./main.css";
 //import axios from 'axios';
-//import scroll from './part-scroll.js';
+import PartScroll from './part-scroll.js';
 
 console.log(PartScroll.version);
 
