@@ -1,5 +1,6 @@
 import scroll from './scroll';
+import { version } from '../package.json';
 
-scroll.version = '1.0.0';
+scroll.version = version;
 
 export default scroll;

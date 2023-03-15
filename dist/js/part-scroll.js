@@ -54,10 +54,22 @@
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
   }
 
+  function dataHandle(data) {
+    if (!Array.isArray(data)) {
+      console.error("data not Array");
+      return false;
+    }
+    var arr = data;
+    for (var i = 0; i < arr.length; i++) {
+      arr[i].uid = i + 1;
+    }
+    return arr;
+  }
+
   function scroll(el, data) {
     this.outerContainer = typeof el === 'string' ? document.querySelector(el) : el;
     this.listContainer = this.outerContainer.children[0];
-    this.data = data ? data : [];
+    this.data = data ? dataHandle(data) : [];
     this.ITEMHEIGHT = 100;
     this.SCREENhEIGHT = this.outerContainer.getBoundingClientRect().height;
     this.ticking = false;
@@ -89,7 +101,7 @@
         var item = document.createElement('div');
         item.className = 'list-item';
         var itemData = viewData[i];
-        item.setAttribute('data-index', itemData.id);
+        item.setAttribute('data-index', itemData.uid);
         var html = this.render(itemData) + '';
         item.innerHTML = html;
         item.setAttribute('style', "height: ".concat(this.ITEMHEIGHT, "px;"));
@@ -111,7 +123,6 @@
       var evt = ev;
       var obj = null;
       while (evt.className !== 'list-item') {
-        console.log(evt.className);
         evt = evt.parentNode;
       }
       if (evt.className === 'list-item') {
@@ -142,7 +153,9 @@
     }
   };
 
-  scroll.version = '1.0.0';
+  var version = "1.0.0";
+
+  scroll.version = version;
 
   return scroll;
 

@@ -1,7 +1,9 @@
+import {dataHandle} from './utils';
+
 function scroll(el, data){
     this.outerContainer = typeof el === 'string' ? document.querySelector(el) : el;
     this.listContainer = this.outerContainer.children[0];
-    this.data =  data ? data : [];
+    this.data =  data ? dataHandle(data) : [];
     this.ITEMHEIGHT = 100;
     this.SCREENhEIGHT = this.outerContainer.getBoundingClientRect().height;
     this.ticking = false;
@@ -33,7 +35,7 @@ scroll.prototype = {
             let item = document.createElement('div');
             item.className = 'list-item';                       
             let itemData = viewData[i];
-            item.setAttribute('data-index', itemData.id); 
+            item.setAttribute('data-index', itemData.uid); 
             let html = this.render(itemData) + '';
             item.innerHTML = html;
             item.setAttribute('style', `height: ${this.ITEMHEIGHT}px;`);
@@ -52,13 +54,11 @@ scroll.prototype = {
           requestAnimationFrame(this.scrollCallBack.bind(this));
         }
     },
-    onClick: function(e){
-        
+    onClick: function(e){       
         let ev = e.target;
         let evt = ev;
         let obj = null;
         while(evt.className !== 'list-item'){
-            console.log(evt.className);
             evt = evt.parentNode;
         }
         if(evt.className === 'list-item'){

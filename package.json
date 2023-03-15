@@ -1,7 +1,7 @@
 {
   "name": "part-virtual-scroll",
   "version": "1.0.0",
-  "description": "",
+  "description": "虚拟列表滚动",
   "main": "dist/part-scroll.js",
   "type": "module",
   "scripts": {
@@ -13,8 +13,12 @@
     "test": "jest --config=./jest.config.js",
     "json": "json-server ./mock/data.cjs --watch"
   },
-  "author": "",
+  "author": "Menchem",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Menchem/part-virtual-scroll.git"
+  },
   "babel": {
     "presets": [
       [
@@ -27,35 +31,6 @@
       ]
     ]
   },
-  "eslintConfig": {
-    "env": {
-      "browser": true,
-      "es6": true,
-      "node": true,
-      "jest": true
-    },
-    "extends": "airbnb-base",
-    "globals": {
-      "twaver": "readonly",
-      "mono": "readonly"
-    },
-    "parserOptions": {
-      "ecmaVersion": 2019
-    },
-    "rules": {
-      "no-console": 0,
-      "no-unused-vars": [
-        "error",
-        {
-          "args": "none"
-        }
-      ]
-    }
-  },
-  "eslintIgnore": [
-    "docs/**/*.*",
-    "coverage/**/*.*"
-  ],
   "devDependencies": {
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
