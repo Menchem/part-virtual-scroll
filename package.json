@@ -1,8 +1,8 @@
 {
   "name": "part-virtual-scroll",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "虚拟列表滚动",
-  "main": "dist/part-scroll.js",
+  "main": "dist/js/part-scroll.js",
   "type": "module",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
