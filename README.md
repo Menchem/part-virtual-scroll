@@ -9,18 +9,18 @@
 >安装
 
 ```bash
-npm install part-scroll
+npm install part-virtual-scroll
 ```
 
 >使用方法
 
 ```js
-import PartScroll from 'part-scroll'
+import PartScroll from 'part-virtual-scroll'
 
 let ps = new PartScroll('#scroll', listData);
 
 //或者
-import PartScroll from 'part-scroll'
+import PartScroll from 'part-virtual-scroll'
 
 let ele = document.querySelector("#scroll")
 
