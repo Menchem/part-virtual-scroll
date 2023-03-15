@@ -1,6 +1,6 @@
 {
   "name": "part-virtual-scroll",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "虚拟列表滚动",
   "main": "dist/part-scroll.js",
   "type": "module",
